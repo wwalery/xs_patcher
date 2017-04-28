@@ -59,7 +59,7 @@ function apply_patches {
 
 			if [ ! -f $CACHE_DIR/$PATCH_NAME.xsupdate ]; then
 				echo "Downloading from $PATCH_URL..."
-				wget -q $PATCH_URL -O $TMP_DIR/$PATCH_FILE
+				wget --no-check-certificate -q $PATCH_URL -O $TMP_DIR/$PATCH_FILE
 				echo "Unpacking..."
 				unzip -qq $TMP_DIR/$PATCH_FILE -d $CACHE_DIR
 			fi	
